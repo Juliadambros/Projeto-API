@@ -3,44 +3,43 @@ import ProductsController from "../controllers/ProductsController";
 
 const productsRouter = Router();
 const productsController = new ProductsController();
-
-productsRouter.get('/', async(req, res, next)=>{
+productsRouter.get("/", async (req, res, next) => {
     try{
-        console.log('routes')
-        await productsController.index(req, res, next);
-    }catch(err){
+        await productsController.index(req,res,next);
+    }
+    catch(err){
         next(err);
     }
 });
-
-productsRouter.get('/:id', async(req, res, next)=>{
+productsRouter.get("/:id", async (req, res, next) => {
     try{
-        await productsController.index(req, res, next);
-    }catch(err){
+        await productsController.show(req,res,next);
+    }
+    catch(err){
         next(err);
     }
 });
-
-productsRouter.post('/', async(req, res, next)=>{
+productsRouter.post("/", async (req, res, next) => {
     try{
-        await productsController.create(req, res, next);
-    }catch(err){
+        await productsController.create(req,res,next);
+    }
+    catch(err){
         next(err);
     }
 });
-
-productsRouter.put('/:id', async(req, res, next)=>{
+productsRouter.put("/:id", async (req, res, next) => {
     try{
-        await productsController.update(req, res, next);
-    }catch(err){
+        await productsController.update(req,res,next);
+    }
+    catch(err){
         next(err);
     }
 });
-
-productsRouter.delete('/:id', async(req, res, next)=>{
+productsRouter.delete("/:id", async (req, res, next) => {
     try{
-        await productsController.delete(req, res, next);
-    }catch(err){
+        await productsController.delete(req,res,next);
+    }
+    catch(err){
         next(err);
     }
 });
