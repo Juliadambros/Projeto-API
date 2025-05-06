@@ -31,3 +31,9 @@ npm run typeorm migration:run
 
 npm run typeorm migration:create -- -n CreateProducts
 npm run typeorm migration:run
+
+npm i express@4.18.2 --force
+npm i celebrate
+npm i -D @types/joi
+
+npm run typeorm migration:create -- -n CreateUsers
