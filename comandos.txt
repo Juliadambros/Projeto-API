@@ -37,3 +37,6 @@ npm i celebrate
 npm i -D @types/joi
 
 npm run typeorm migration:create -- -n CreateUsers
+
+npm i bcryptjs
+npm i -D @types/bcryptjs
