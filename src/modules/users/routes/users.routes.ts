@@ -1,11 +1,12 @@
 import { Router } from "express";
 import UsersController from "../controllers/UsersController";
 import { celebrate, Joi, Segments } from "celebrate";
+import isAuthenticated from "../../../shared/http/middlewares/isAuthenticated";
 
 const usersRoutes = Router();
 const usersController =  new UsersController();
 
-usersRoutes.get('/', async(req, res, next)=>{
+usersRoutes.get('/', isAuthenticated, async(req, res, next)=>{
     try{
         await usersController.index(req, res, next);
     }catch(err){

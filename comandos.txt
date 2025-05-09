@@ -40,3 +40,6 @@ npm run typeorm migration:create -- -n CreateUsers
 
 npm i bcryptjs
 npm i -D @types/bcryptjs
+
+npm i jsonwebtoken
+npm i -D @types/jsonwebtoken
